@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.quaza.unitymcp": {
+      "version": "https://github.com/quazaai/UnityMCPIntegration.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "d1515b326e2fc14b39de5a08534159ba29963c7d"
+    },
     "com.unity.2d.pixel-perfect": {
       "version": "5.0.3",
       "depth": 0,

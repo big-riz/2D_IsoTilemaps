@@ -73,3 +73,6 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/2D_IsoTilemaps_Project/Packages
+/2D_IsoTilemaps_Project/Packages
+/2D_IsoTilemaps_Project/Logs

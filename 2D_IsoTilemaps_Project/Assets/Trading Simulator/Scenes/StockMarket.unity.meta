@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9aba53d7b52cd4043b2ae6d7dcf54b52
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 140914
+  packageName: Trading Simulator
+  packageVersion: 1.0
+  assetPath: Assets/Trading Simulator/Scenes/StockMarket.unity
+  uploadId: 296995

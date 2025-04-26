@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 50b4c3306c774ff4e86db56533ca8952
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 140914
+  packageName: Trading Simulator
+  packageVersion: 1.0
+  assetPath: Assets/Trading Simulator/prefabs/markerUP.prefab
+  uploadId: 296995

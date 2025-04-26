@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1f0fb598e029adb41aac158bfbd139ac
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 140914
+  packageName: Trading Simulator
+  packageVersion: 1.0
+  assetPath: Assets/Trading Simulator/Scripts/GenerateDataStream.cs
+  uploadId: 296995

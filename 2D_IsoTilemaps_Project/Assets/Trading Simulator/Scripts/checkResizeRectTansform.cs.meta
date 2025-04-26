@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: f79692802ac0ba64ba7ea77e89c88657
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 140914
+  packageName: Trading Simulator
+  packageVersion: 1.0
+  assetPath: Assets/Trading Simulator/Scripts/checkResizeRectTansform.cs
+  uploadId: 296995
