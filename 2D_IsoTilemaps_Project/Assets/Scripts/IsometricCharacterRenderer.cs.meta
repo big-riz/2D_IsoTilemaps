@@ -3,7 +3,23 @@ guid: 0631f36ac84554335b5b1f70f25312fb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - northSprite: {fileID: 5884568115374742511, guid: 0fe3decf3fd03254b9c7e9e77d1d20bc,
+      type: 3}
+  - northEastSprite: {fileID: 7579093963305755806, guid: 39c527d5fdb7b16419178105094d38f7,
+      type: 3}
+  - eastSprite: {fileID: 5816061145435242446, guid: 1d19b4bc6124e9a42a1ccdb4c5e6baf2,
+      type: 3}
+  - southEastSprite: {fileID: -3039516807214647808, guid: f501877d4fd230341b4d60af0dc5261e,
+      type: 3}
+  - southSprite: {fileID: -2460506902762365412, guid: 5958370838a6f924fbea56fbc94d98aa,
+      type: 3}
+  - southWestSprite: {fileID: -7470715477794671535, guid: 63a8cb440d47c2e429d36786e5c27a64,
+      type: 3}
+  - westSprite: {fileID: 3098264404726478020, guid: 9d1cc96628948014e8fe588e350fddb3,
+      type: 3}
+  - northWestSprite: {fileID: -1118712693103795561, guid: d286a8dae57e9f141982c40dbc3f2758,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

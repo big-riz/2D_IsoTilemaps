@@ -2,94 +2,93 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 public class IsometricCharacterRenderer : MonoBehaviour
 {
-
-    public static readonly string[] staticDirections = { "Static N", "Static NW", "Static W", "Static SW", "Static S", "Static SE", "Static E", "Static NE" };
-    public static readonly string[] runDirections = {"Run N", "Run NW", "Run W", "Run SW", "Run S", "Run SE", "Run E", "Run NE"};
-
-    Animator animator;
-    int lastDirection;
-
+    private SpriteRenderer spriteRenderer;
+    
+    [Header("Direction Sprites")]
+    public Sprite northSprite;
+    public Sprite northEastSprite;
+    public Sprite eastSprite;
+    public Sprite southEastSprite;
+    public Sprite southSprite;
+    public Sprite southWestSprite;
+    public Sprite westSprite;
+    public Sprite northWestSprite;
+    
+    private IsometricPlayerMovementController.CardinalDirection lastDirection = 
+        IsometricPlayerMovementController.CardinalDirection.South; // Default direction
+    
     private void Awake()
     {
-        //cache the animator component
-        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        
+        // Set default sprite
+        UpdateSprite();
     }
-
-
-    public void SetDirection(Vector2 direction){
-
-        //use the Run states by default
-        string[] directionArray = null;
-
-        //measure the magnitude of the input.
-        if (direction.magnitude < .01f)
-        {
-            //if we are basically standing still, we'll use the Static states
-            //we won't be able to calculate a direction if the user isn't pressing one, anyway!
-            directionArray = staticDirections;
-        }
-        else
-        {
-            //we can calculate which direction we are going in
-            //use DirectionToIndex to get the index of the slice from the direction vector
-            //save the answer to lastDirection
-            directionArray = runDirections;
-            lastDirection = DirectionToIndex(direction, 8);
-        }
-
-        //tell the animator to play the requested state
-        animator.Play(directionArray[lastDirection]);
-    }
-
-    //helper functions
-
-    //this function converts a Vector2 direction to an index to a slice around a circle
-    //this goes in a counter-clockwise direction.
-    public static int DirectionToIndex(Vector2 dir, int sliceCount){
-        //get the normalized direction
-        Vector2 normDir = dir.normalized;
-        //calculate how many degrees one slice is
-        float step = 360f / sliceCount;
-        //calculate how many degress half a slice is.
-        //we need this to offset the pie, so that the North (UP) slice is aligned in the center
-        float halfstep = step / 2;
-        //get the angle from -180 to 180 of the direction vector relative to the Up vector.
-        //this will return the angle between dir and North.
-        float angle = Vector2.SignedAngle(Vector2.up, normDir);
-        //add the halfslice offset
-        angle += halfstep;
-        //if angle is negative, then let's make it positive by adding 360 to wrap it around.
-        if (angle < 0){
-            angle += 360;
-        }
-        //calculate the amount of steps required to reach this angle
-        float stepCount = angle / step;
-        //round it, and we have the answer!
-        return Mathf.FloorToInt(stepCount);
-    }
-
-
-
-
-
-
-
-    //this function converts a string array to a int (animator hash) array.
-    public static int[] AnimatorStringArrayToHashArray(string[] animationArray)
+    
+    // Original method can be kept for compatibility
+    public void SetDirection(Vector2 direction)
     {
-        //allocate the same array length for our hash array
-        int[] hashArray = new int[animationArray.Length];
-        //loop through the string array
-        for (int i = 0; i < animationArray.Length; i++)
+        // This might be called from other places, so we'll handle it
+        if (direction != Vector2.zero)
         {
-            //do the hash and save it to our hash array
-            hashArray[i] = Animator.StringToHash(animationArray[i]);
+            // Determine direction and update sprite
+            IsometricPlayerMovementController movementController = 
+                GetComponentInParent<IsometricPlayerMovementController>();
+            if (movementController != null)
+            {
+                lastDirection = movementController.GetCardinalDirection(direction);
+                UpdateSprite();
+            }
         }
-        //we're done!
-        return hashArray;
     }
-
+    
+    // New method that accepts both the movement vector and the calculated direction
+    public void SetDirection(Vector2 direction, IsometricPlayerMovementController.CardinalDirection cardinalDirection)
+    {
+        if (direction != Vector2.zero)
+        {
+            lastDirection = cardinalDirection;
+            UpdateSprite();
+        }
+    }
+    
+    // Get the last used direction
+    public IsometricPlayerMovementController.CardinalDirection GetLastDirection()
+    {
+        return lastDirection;
+    }
+    
+    // Update sprite based on current direction
+    private void UpdateSprite()
+    {
+        switch (lastDirection)
+        {
+            case IsometricPlayerMovementController.CardinalDirection.North:
+                spriteRenderer.sprite = northSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.NorthEast:
+                spriteRenderer.sprite = northEastSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.East:
+                spriteRenderer.sprite = eastSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.SouthEast:
+                spriteRenderer.sprite = southEastSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.South:
+                spriteRenderer.sprite = southSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.SouthWest:
+                spriteRenderer.sprite = southWestSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.West:
+                spriteRenderer.sprite = westSprite;
+                break;
+            case IsometricPlayerMovementController.CardinalDirection.NorthWest:
+                spriteRenderer.sprite = northWestSprite;
+                break;
+        }
+    }
 }
