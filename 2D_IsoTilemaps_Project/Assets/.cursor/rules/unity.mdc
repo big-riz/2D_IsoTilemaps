@@ -1,0 +1,29 @@
+---
+description: 
+globs: *.cs
+alwaysApply: false
+---
+  - Follow C# naming conventions PascalCase for classes/methods/properties,
+    _camelCase for private fields
+  - Use [SerializeField] for inspector variables instead of making them public
+  - Write XML comments (///) for all public methods and classes
+  - Organize code with region tags (Unity Lifecycle, Private Fields, Public
+    Methods, etc.)
+  - Follow SOLID principles Single Responsibility, Open/Closed, Liskov
+    Substitution, Interface Segregation, Dependency Inversion
+  - Use UnityEvents for component communication in the inspector
+  - Cache component references in Awake() method
+  - Implement object pooling for frequently instantiated prefabs
+  - Prefer composition over inheritance
+  - Use ScriptableObjects for data-driven design
+  - Keep Update() methods lightweight, move physics to FixedUpdate()
+  - Follow the Component pattern one behavior per script
+  - Never use Find/GetComponent in Update methods
+  - Implement interfaces for systems that may have multiple implementations
+  - Naming Public classes, methods, and fields — CamelCase, private fields —
+    _camelCase, local camelCase
+  - Write Debug logs in the appropriate places
+  - If you are in doubt about doing something, ask before you do it
+
+
+  - do not use the verify_connection tool. it is broken. use any other tool.

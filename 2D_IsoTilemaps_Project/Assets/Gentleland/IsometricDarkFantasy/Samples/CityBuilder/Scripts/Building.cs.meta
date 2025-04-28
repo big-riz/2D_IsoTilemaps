@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 62a02a31507df7441ae4fbbc20d5bb01
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 227487
+  packageName: Isometric Dark Fantasy
+  packageVersion: 1.0
+  assetPath: Assets/Gentleland/IsometricDarkFantasy/Samples/CityBuilder/Scripts/Building.cs
+  uploadId: 517464

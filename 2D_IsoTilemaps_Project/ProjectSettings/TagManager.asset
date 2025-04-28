@@ -2,8 +2,9 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Glitchy
   layers:
   - Default
   - TransparentFX
@@ -44,9 +45,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
+  - name: Ground 1
     uniqueID: 2130146985
+    locked: 0
+  - name: Details  1
+    uniqueID: 474283237
+    locked: 0
+  - name: Walls  1
+    uniqueID: 2750046485
+    locked: 0
+  - name: Details 2
+    uniqueID: 3988893805
+    locked: 0
+  - name: Walls 2
+    uniqueID: 3143450399
+    locked: 0
+  - name: Player
+    uniqueID: 3449268053
     locked: 0
   - name: Collider Debug
     uniqueID: 3310053101
     locked: 0
+  m_RenderingLayers:
+  - Default

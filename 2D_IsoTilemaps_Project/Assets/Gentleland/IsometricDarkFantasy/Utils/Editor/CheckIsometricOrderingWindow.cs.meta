@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 24e0c9bf5b1609e4bbbdbbf4d970fb7f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 227487
+  packageName: Isometric Dark Fantasy
+  packageVersion: 1.0
+  assetPath: Assets/Gentleland/IsometricDarkFantasy/Utils/Editor/CheckIsometricOrderingWindow.cs
+  uploadId: 517464

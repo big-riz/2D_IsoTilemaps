@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: c2ae7bb90adf5254ea70b9da8236d61c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 227487
+  packageName: Isometric Dark Fantasy
+  packageVersion: 1.0
+  assetPath: Assets/Gentleland/IsometricDarkFantasy/Utils/Editor/WelcomeWindow.cs
+  uploadId: 517464

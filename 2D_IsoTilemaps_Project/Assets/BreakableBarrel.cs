@@ -2,30 +2,27 @@ using UnityEngine;
 
 public class BreakableBarrel : MonoBehaviour
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private string breakAnimationTrigger = "Break";
+    [SerializeField] private Animation anim;
+    [SerializeField] private string breakAnimationName = "BarrelBreak";
     [SerializeField] private bool useCollisionDetection = true;
     [SerializeField] private string playerTag = "Player";
     
     private bool broken = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        // If animator component isn't assigned, try to get it from this GameObject
-        if (animator == null)
+        // If animation component isn't assigned, try to get it from this GameObject
+        if (anim == null)
         {
-            animator = GetComponent<Animator>();
+            anim = GetComponent<Animation>();
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         // Keep the update method for potential future functionality
     }
     
-    // Called when another collider enters this object's collider (if both have rigidbodies)
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (!useCollisionDetection) return;
@@ -37,7 +34,6 @@ public class BreakableBarrel : MonoBehaviour
         }
     }
     
-    // Alternative trigger-based collision (for trigger colliders)
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if (useCollisionDetection) return;
@@ -49,21 +45,20 @@ public class BreakableBarrel : MonoBehaviour
         }
     }
     
-    // Public method to break the barrel (can be called from other scripts too)
     public void BreakBarrel()
     {
         if (broken) return;
         
         broken = true;
         
-        // Play the break animation if animator exists
-        if (animator != null)
+        // Play the break animation if animation component exists
+        if (anim != null && anim.GetClip(breakAnimationName) != null)
         {
-            animator.SetTrigger(breakAnimationTrigger);
+            anim.Play(breakAnimationName);
         }
         else
         {
-            Debug.LogWarning("No Animator component attached to the barrel!");
+            Debug.LogWarning("No Animation component attached to the barrel or animation clip not found!");
         }
     }
 }
